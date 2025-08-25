@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@theme {
+    --radius: 0.75rem;
+}
