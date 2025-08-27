@@ -1,5 +1,5 @@
-import type { RootState } from '@/app/store';
 import { type Task, tasksApi } from '@/services/tasks-api';
+import type { RootState } from '@/store/store';
 
 import { createEntityAdapter, createSelector, createSlice } from '@reduxjs/toolkit';
 

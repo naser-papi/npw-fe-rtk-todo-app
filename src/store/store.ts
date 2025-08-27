@@ -1,6 +1,6 @@
-import filters from '@/features/filters/filters-slice';
-import tasks from '@/features/tasks/tasks-slice';
 import { tasksApi } from '@/services/tasks-api';
+import filters from '@/store/filters-slice';
+import tasks from '@/store/tasks-slice';
 
 import { configureStore } from '@reduxjs/toolkit';
 

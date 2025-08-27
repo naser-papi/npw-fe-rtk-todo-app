@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { setQuery, setSort, setStatus } from '@/features/filters/filters-slice';
 import { useAppDispatch, useAppSelector } from '@/lib/redux';
+import { setQuery, setSort, setStatus } from '@/store/filters-slice';
 
 export const Filters = () => {
   const dispatch = useAppDispatch();

@@ -1,5 +1,4 @@
 import { Badge } from '@/components/ui/badge';
-import { selectFilteredTasks } from '@/features/tasks/tasks-slice';
 import { useAppSelector } from '@/lib/redux';
 import {
   useAddTaskMutation,
@@ -7,6 +6,7 @@ import {
   useGetTasksQuery,
   useToggleTaskMutation,
 } from '@/services/tasks-api';
+import { selectFilteredTasks } from '@/store/tasks-slice';
 
 const fmt = (ts?: number) => (ts ? new Date(ts).toLocaleTimeString() : '—');
 
