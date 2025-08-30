@@ -20,29 +20,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Install Node (and enable pnpm caching)
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: pnpm
+          node-version: '20'
+          cache: 'pnpm'
+          cache-dependency-path: pnpm-lock.yaml
 
-      # Install pnpm
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-          run_install: true  # runs `pnpm install`
+      - name: Enable pnpm via Corepack
+        run: |
+          corepack enable
+          corepack prepare pnpm@9 --activate
+          pnpm --version
 
-      # Build your Vite app
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
       - name: Build
         run: pnpm build
 
-      # SPA fallback so deep links work on Pages
-      - name: Add 404 fallback
+      - name: SPA 404 fallback
         run: cp dist/index.html dist/404.html
 
-      # Upload the built site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
