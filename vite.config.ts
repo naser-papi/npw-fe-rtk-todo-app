@@ -5,6 +5,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: 'npw-fe-rtk-todo-app/',
   plugins: [react()],
   css: {
     postcss: {
