@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button';
-import { Checkbox } from '@/components/ui/checkbox';
-import { useDeleteTaskMutation, useToggleTaskMutation } from '@/services/tasks-api';
+import { Button } from '@/components/atom/button.tsx';
+import { Checkbox } from '@/components/atom/checkbox.tsx';
+import { useDeleteTaskMutation, useToggleTaskMutation } from '@/services/tasks-api.ts';
 
 import { toast } from 'sonner';
 

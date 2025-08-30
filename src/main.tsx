@@ -1,4 +1,4 @@
-import { Toaster } from '@/components/ui/sonner';
+import { Toaster } from '@/components/atom/sonner';
 import '@/index.css';
 import { store } from '@/store/store';
 

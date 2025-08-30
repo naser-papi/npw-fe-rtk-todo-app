@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { useAddTaskMutation } from '@/services/tasks-api';
+import { Button } from '@/components/atom/button.tsx';
+import { Input } from '@/components/atom/input.tsx';
+import { useAddTaskMutation } from '@/services/tasks-api.ts';
 
 import { useState } from 'react';
 

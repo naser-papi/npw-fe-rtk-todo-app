@@ -1,10 +1,10 @@
-import { ErrorBanner } from '@/components/error-banner';
-import { RenderCounter } from '@/components/hud/render-counter';
-import { TaskRow } from '@/components/task-row';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useAppSelector } from '@/lib/redux';
-import { useGetTasksQuery } from '@/services/tasks-api';
-import { selectFilteredTasks } from '@/store/tasks-slice';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/atom/card.tsx';
+import { ErrorBanner } from '@/components/molecule/error-banner.tsx';
+import { RenderCounter } from '@/components/molecule/render-counter.tsx';
+import { TaskRow } from '@/components/organism/task-row.tsx';
+import { useAppSelector } from '@/lib/redux.ts';
+import { useGetTasksQuery } from '@/services/tasks-api.ts';
+import { selectFilteredTasks } from '@/store/tasks-slice.ts';
 
 export const TaskList = () => {
   // trigger fetch; normalized slice provides the data

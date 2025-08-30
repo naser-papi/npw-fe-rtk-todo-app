@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { useAppDispatch, useAppSelector } from '@/lib/redux';
-import { setQuery, setSort, setStatus } from '@/store/filters-slice';
+import { Button } from '@/components/atom/button.tsx';
+import { Input } from '@/components/atom/input.tsx';
+import { useAppDispatch, useAppSelector } from '@/lib/redux.ts';
+import { setQuery, setSort, setStatus } from '@/store/filters-slice.ts';
 
 export const Filters = () => {
   const dispatch = useAppDispatch();
