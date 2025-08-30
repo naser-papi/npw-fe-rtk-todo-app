@@ -4,7 +4,6 @@ import { store } from '@/store/store';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// if your App is at src/app.tsx keep as "./App"
 import { Provider } from 'react-redux';
 
 import App from './app.tsx';
