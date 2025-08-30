@@ -1,7 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/atom/card.tsx';
-import { ErrorBanner } from '@/components/molecule/error-banner.tsx';
-import { RenderCounter } from '@/components/molecule/render-counter.tsx';
-import { TaskRow } from '@/components/organism/task-row.tsx';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/atom';
+import { ErrorBanner, RenderCounter } from '@/components/molecule';
+import { TaskRow } from '@/components/organism';
 import { useAppSelector } from '@/lib/redux.ts';
 import { useGetTasksQuery } from '@/services/tasks-api.ts';
 import { selectFilteredTasks } from '@/store/tasks-slice.ts';

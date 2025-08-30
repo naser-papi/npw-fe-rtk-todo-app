@@ -1,8 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/atom/card';
-import { AddTaskForm } from '@/components/organism/add-task-form.tsx';
-import { Filters } from '@/components/organism/filters.tsx';
-import { ProofHud } from '@/components/organism/proof-hud';
-import { TaskList } from '@/components/organism/task-list.tsx';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/atom';
+import { AddTaskForm, Filters, ProofHud, TaskList } from '@/components/organism';
 
 const App = () => {
   return (

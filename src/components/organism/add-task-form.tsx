@@ -1,5 +1,4 @@
-import { Button } from '@/components/atom/button.tsx';
-import { Input } from '@/components/atom/input.tsx';
+import { Button, Input } from '@/components/atom';
 import { useAddTaskMutation } from '@/services/tasks-api.ts';
 
 import { useState } from 'react';

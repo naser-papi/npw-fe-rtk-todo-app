@@ -1,4 +1,4 @@
-import { Badge } from '@/components/atom/badge';
+import { Badge } from '@/components/atom';
 import { useAppSelector } from '@/lib/redux';
 import {
   useAddTaskMutation,

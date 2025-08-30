@@ -1,5 +1,4 @@
-import { Button } from '@/components/atom/button.tsx';
-import { Input } from '@/components/atom/input.tsx';
+import { Button, Input } from '@/components/atom';
 import { useAppDispatch, useAppSelector } from '@/lib/redux.ts';
 import { setQuery, setSort, setStatus } from '@/store/filters-slice.ts';
 

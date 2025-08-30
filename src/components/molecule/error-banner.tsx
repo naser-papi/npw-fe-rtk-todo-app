@@ -1,4 +1,4 @@
-import { Button } from '@/components/atom/button.tsx';
+import { Button } from '@/components/atom';
 
 type Props = {
   message?: string;
