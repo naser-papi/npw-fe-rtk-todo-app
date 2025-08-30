@@ -9,14 +9,21 @@ import { Provider } from 'react-redux';
 
 import App from './app.tsx';
 
-async function enableMocking() {
-  //if (import.meta.env.DEV) {
-  const { worker } = await import('@/mocks/browser');
-  await worker.start({ onUnhandledRequest: 'bypass' });
-  //}
+async function enableMocksIfNeeded() {
+  const enable = import.meta.env.DEV || import.meta.env.VITE_ENABLE_MSW === 'true';
+
+  if (!enable) return;
+
+  const { worker } = await import('./mocks/browser'); // where you call setupWorker(...)
+  await worker.start({
+    serviceWorker: {
+      url: `${import.meta.env.BASE_URL}mockServiceWorker.js`,
+      options: { scope: import.meta.env.BASE_URL },
+    },
+  });
 }
 
-enableMocking().then(() => {
+enableMocksIfNeeded().then(() => {
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
       <Provider store={store}>
