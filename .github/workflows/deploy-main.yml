@@ -20,28 +20,34 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # 1) Install pnpm first
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          # set to the pnpm major you use locally (or omit if package.json has "packageManager")
+          version: 9
+          run_install: false
+
+      # 2) Then setup Node with pnpm caching
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: 20
+          cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
 
-      - name: Enable pnpm via Corepack
-        run: |
-          corepack enable
-          corepack prepare pnpm@9 --activate
-          pnpm --version
-
-      - name: Install deps
+      # 3) Install deps & build
+      - name: Install
         run: pnpm install --frozen-lockfile
 
       - name: Build
         run: pnpm build
 
-      - name: SPA 404 fallback
+      # SPA fallback for GitHub Pages
+      - name: Add 404 fallback
         run: cp dist/index.html dist/404.html
 
+      # Upload built site for Pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
