@@ -1,4 +1,5 @@
 import { Toaster } from '@/components/atom';
+import { ThemeProvider } from '@/components/molecule';
 import '@/index.css';
 import { store } from '@/store/store';
 
@@ -26,8 +27,15 @@ enableMocksIfNeeded().then(() => {
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
       <Provider store={store}>
-        <App />
-        <Toaster richColors position="top-right" />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <App />
+          <Toaster richColors position="top-right" />
+        </ThemeProvider>
       </Provider>
     </React.StrictMode>
   );

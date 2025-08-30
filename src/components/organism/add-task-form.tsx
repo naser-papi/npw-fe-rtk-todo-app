@@ -32,7 +32,7 @@ export const AddTaskForm = () => {
         onChange={e => setTitle(e.target.value)}
       />
       <select
-        className="h-9 rounded border px-2"
+        className="border-input bg-background text-foreground focus:ring-ring h-9 rounded border px-2 text-sm focus:ring-2 focus:outline-none"
         value={priority}
         onChange={e => setPriority(e.target.value as any)}
       >

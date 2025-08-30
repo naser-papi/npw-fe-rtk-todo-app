@@ -3,4 +3,92 @@
 
 @theme {
     --radius: 0.75rem;
+
+    /* Light theme colors */
+    --color-background: oklch(100% 0 0);
+    --color-foreground: oklch(9% 0.026 285.75);
+    --color-card: oklch(100% 0 0);
+    --color-card-foreground: oklch(9% 0.026 285.75);
+    --color-popover: oklch(100% 0 0);
+    --color-popover-foreground: oklch(9% 0.026 285.75);
+    --color-primary: oklch(47.78% 0.167 255.34);
+    --color-primary-foreground: oklch(97.78% 0.013 252.95);
+    --color-secondary: oklch(96.16% 0.013 252.95);
+    --color-secondary-foreground: oklch(9% 0.026 285.75);
+    --color-muted: oklch(96.16% 0.013 252.95);
+    --color-muted-foreground: oklch(45.88% 0.019 251.62);
+    --color-accent: oklch(96.16% 0.013 252.95);
+    --color-accent-foreground: oklch(9% 0.026 285.75);
+    --color-destructive: oklch(62.8% 0.257 29.23);
+    --color-destructive-foreground: oklch(97.78% 0.013 252.95);
+    --color-border: oklch(89.84% 0.019 251.62);
+    --color-input: oklch(89.84% 0.019 251.62);
+    --color-ring: oklch(47.78% 0.167 255.34);
+}
+
+@media (prefers-color-scheme: dark) {
+    @theme {
+        /* Improved dark palette for better contrast and softer surfaces */
+        --color-background: oklch(17% 0.018 275); /* app bg */
+        --color-foreground: oklch(96% 0.01 255);  /* base text */
+        --color-card: oklch(21% 0.02 275);       /* elevated surface */
+        --color-card-foreground: oklch(96% 0.01 255);
+        --color-popover: oklch(21% 0.02 275);
+        --color-popover-foreground: oklch(96% 0.01 255);
+        --color-primary: oklch(72% 0.19 237);    /* bright accent */
+        --color-primary-foreground: oklch(17% 0.018 275);
+        --color-secondary: oklch(27% 0.02 275);  /* subtle surface */
+        --color-secondary-foreground: oklch(92% 0.01 255);
+        --color-muted: oklch(27% 0.02 275);
+        --color-muted-foreground: oklch(78% 0.015 255);
+        --color-accent: oklch(27% 0.02 275);
+        --color-accent-foreground: oklch(96% 0.01 255);
+        --color-destructive: oklch(55% 0.18 29); /* improved visibility */
+        --color-destructive-foreground: oklch(15% 0.02 275);
+        --color-border: oklch(32% 0.02 275);
+        --color-input: oklch(27% 0.02 275);
+        --color-ring: oklch(80% 0.19 237);
+    }
+}
+
+/* Manual dark class override (for next-themes) */
+.dark {
+    color-scheme: dark;
+}
+
+.dark
+
+@theme {
+    /* Match improved dark palette for manual class mode */
+    --color-background: oklch(17% 0.018 275);
+    --color-foreground: oklch(96% 0.01 255);
+    --color-card: oklch(21% 0.02 275);
+    --color-card-foreground: oklch(96% 0.01 255);
+    --color-popover: oklch(21% 0.02 275);
+    --color-popover-foreground: oklch(96% 0.01 255);
+    --color-primary: oklch(72% 0.19 237);
+    --color-primary-foreground: oklch(17% 0.018 275);
+    --color-secondary: oklch(27% 0.02 275);
+    --color-secondary-foreground: oklch(92% 0.01 255);
+    --color-muted: oklch(27% 0.02 275);
+    --color-muted-foreground: oklch(78% 0.015 255);
+    --color-accent: oklch(27% 0.02 275);
+    --color-accent-foreground: oklch(96% 0.01 255);
+    --color-destructive: oklch(55% 0.18 29);
+    --color-destructive-foreground: oklch(15% 0.02 275);
+    --color-border: oklch(32% 0.02 275);
+    --color-input: oklch(27% 0.02 275);
+    --color-ring: oklch(80% 0.19 237);
+}
+
+@layer base {
+    * {
+        border-color: var(--color-border);
+    }
+
+    body {
+        background-color: var(--color-background);
+        color: var(--color-foreground);
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
 }

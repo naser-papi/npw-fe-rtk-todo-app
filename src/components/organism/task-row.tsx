@@ -30,7 +30,11 @@ export const TaskRow = ({ id, title, done }: Props) => {
     <div className="flex items-center gap-3 py-2">
       <Checkbox checked={done} onCheckedChange={onToggle} />
       <div className={`flex-1 ${done ? 'text-neutral-500 line-through' : ''}`}>{title}</div>
-      <Button variant="ghost" onClick={onDelete}>
+      <Button
+        variant="secondary"
+        onClick={onDelete}
+        className={'bg-destructive hover:bg-destructive/80'}
+      >
         Delete
       </Button>
     </div>
