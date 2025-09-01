@@ -112,7 +112,8 @@ src/
 4. Fetch and sync data using RTK Query,
 5. Compose selectors with Reselect for filtering and sorting.
 
-> 👉 Read the full tutorial on LinkedIn: [RTK Todo App Tutorial](https://www.linkedin.com/in/naser-papi/)
+> 👉 Read the full tutorial on
+> LinkedIn: [RTK Todo App Tutorial](https://www.linkedin.com/pulse/learning-redux-toolkit-through-real-project-naser-papi-dcr0f/)
 
 ## 🏃 Getting Started
 
