@@ -2,10 +2,8 @@ import { tasksApi } from '@/services/tasks-api';
 import filters from '@/store/filters-slice';
 import tasks from '@/store/tasks-slice';
 
-
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
-
 
 export const store = configureStore({
   reducer: {
